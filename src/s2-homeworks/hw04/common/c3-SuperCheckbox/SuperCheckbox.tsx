@@ -12,7 +12,6 @@ type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElem
 type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
     onChangeChecked?: (checked: boolean) => void
     spanClassName?: string
-    checked: boolean
 }
 
 const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
