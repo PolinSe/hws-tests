@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/hws-tests/static/css/main.7a11faf0.css",
-    "main.js": "/hws-tests/static/js/main.64a525a0.js",
+    "main.css": "/hws-tests/static/css/main.2ad5a103.css",
+    "main.js": "/hws-tests/static/js/main.49c4538a.js",
     "static/js/787.66cb4309.chunk.js": "/hws-tests/static/js/787.66cb4309.chunk.js",
     "static/media/avatar.png": "/hws-tests/static/media/avatar.d947cb9d0d13765666b6.png",
     "static/media/404.svg": "/hws-tests/static/media/404.9ec31c0ba8d95b0480272e46af98c955.svg",
     "static/media/closeOutline.svg": "/hws-tests/static/media/closeOutline.b64ba402fac8a549bc2de97e9cf84a61.svg",
+    "static/media/editIcon.svg": "/hws-tests/static/media/editIcon.0a0cefd2190b593b4f76bb1a5afe0c1f.svg",
     "static/media/checked.svg": "/hws-tests/static/media/checked.b75ca55e8759862b4083.svg",
     "index.html": "/hws-tests/index.html",
     "static/media/burger.svg": "/hws-tests/static/media/burger.700e416f7bfe3697f96b36c778d25355.svg",
-    "main.7a11faf0.css.map": "/hws-tests/static/css/main.7a11faf0.css.map",
-    "main.64a525a0.js.map": "/hws-tests/static/js/main.64a525a0.js.map",
+    "main.2ad5a103.css.map": "/hws-tests/static/css/main.2ad5a103.css.map",
+    "main.49c4538a.js.map": "/hws-tests/static/js/main.49c4538a.js.map",
     "787.66cb4309.chunk.js.map": "/hws-tests/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a11faf0.css",
-    "static/js/main.64a525a0.js"
+    "static/css/main.2ad5a103.css",
+    "static/js/main.49c4538a.js"
   ]
 }
