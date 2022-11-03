@@ -15,4 +15,9 @@
 
 .hwTitle {
     padding-top: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 27px;
 }
