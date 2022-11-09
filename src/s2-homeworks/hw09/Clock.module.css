@@ -1,14 +1,30 @@
 .buttonsContainer {
+    display: flex;
+    gap: 20px;
 }
+
+.buttonsContainer button {
+    width: 82px;
+    height: 30px;
+}
+
 
 .clock {
 }
 
 .watch {
+    font-size: 20px;
+}
+
+.watch:hover {
+    cursor: pointer;
 }
 
 .watch strong {
 }
 
 .more {
+    height: 55px;
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.5);
 }
