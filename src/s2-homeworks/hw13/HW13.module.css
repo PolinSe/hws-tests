@@ -2,6 +2,8 @@
 }
 
 .responseContainer {
+    display: flex;
+    gap: 80px;
 }
 
 .imageContainer {
@@ -11,12 +13,16 @@
 }
 
 .textContainer{
+    margin-top: 100px;
 }
 
 .code {
+    margin-bottom: 12px;
+    font-size: 30px;
+    line-height: 37px;
 }
 
-.text {
-}
-.info {
+.text, .info {
+    font-size: 16px;
+    line-height: 20px;
 }

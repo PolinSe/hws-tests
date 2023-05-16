@@ -20,26 +20,84 @@ const HW13 = () => {
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
 
+    const [isLoading, setIsLoading] = useState(false)
+
+
+
     const send = (x?: boolean | null) => () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
-                : 'https://incubator-personal-page-back.herokuapp.com/api/3.0/homework/test'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
         setImage('')
         setText('')
         setInfo('...loading')
+        setIsLoading(true)
 
+        const setFunction = (code: string, image: string, text: string, info: string) => {
+            setCode(code)
+            setImage(image)
+            setText(text)
+            setInfo(info)
+            setIsLoading(false)
+        }
         axios
             .post(url, {success: x})
             .then((res) => {
-                setCode('Код 200!')
-                setImage(success200)
-                // дописать
+
+                setFunction('Код 200!', success200, res.data.errorText, res.data.info)
+
+                // setCode('Код 200!')
+                // setImage(success200)
+                // setText(res.data.errorText)
+                // setInfo(res.data.info)
+                // setIsLoading(false)
 
             })
             .catch((e) => {
+
+                if (e.response.status === 400) {
+                    setFunction(
+                        'Ошибка 400!',
+                        error400,
+                        "Ты не отправил success в body вообще!",
+                        "ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!"
+                    )
+
+                    // setCode('Ошибка 400!')
+                    // setImage(error400)
+                    // setText("Ты не отправил success в body вообще!")
+                    // setInfo("ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!")
+                    // setIsLoading(false)
+
+                } else if (e.response.status === 500) {
+                    setFunction(
+                        'Ошибка 500!',
+                        error500,
+                        "эмитация ошибки на сервере",
+                        "ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных"
+                    )
+                    // setCode('Ошибка 500!')
+                    // setImage(error500)
+                    // setText("эмитация ошибки на сервере")
+                    // setInfo("ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных")
+                    // setIsLoading(false)
+
+                } else {
+                    setFunction(
+                        'Error!',
+                        errorUnknown,
+                        e.message,
+                        e.name
+                    )
+                    // setCode('Error!')
+                    // setImage(errorUnknown)
+                    // setText(e.message)
+                    // setInfo(e.name)
+                    // setIsLoading(false)
+                }
                 // дописать
 
             })
@@ -55,6 +113,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
+                        disabled={isLoading}
                         // дописать
 
                     >
@@ -64,6 +123,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
+                        disabled={isLoading}
                         // дописать
 
                     >
@@ -73,6 +133,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
+                        disabled={isLoading}
                         // дописать
 
                     >
@@ -82,6 +143,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
+                        disabled={isLoading}
                         // дописать
 
                     >
