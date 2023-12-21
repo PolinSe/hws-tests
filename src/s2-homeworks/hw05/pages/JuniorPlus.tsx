@@ -6,19 +6,21 @@ import {Provider} from 'react-redux';
 import store from '../../hw10/bll/store';
 import HW13 from '../../hw13/HW13';
 import HW14 from '../../hw14/HW14';
-//import HW13 from '../../hw13/HW13'
+import HW15 from '../../hw15/HW15';
+
 
 function JuniorPlus() {
     return (
         <div id={'hw5-page-junior-plus'}>
             <HW10 />
-            <HW11 />
-            <Provider store={store}>
-                <HW12 />
-            </Provider>
+            {/*<HW11 />*/}
+            {/*<Provider store={store}>*/}
+            {/*    <HW12 />*/}
+            {/*</Provider>*/}
 
-            <HW13 />
-            <HW14 />
+            {/*<HW13 />*/}
+            {/*<HW14 />*/}
+            <HW15 />
         </div>
     )
 }
