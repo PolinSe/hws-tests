@@ -54,7 +54,10 @@ const HW15 = () => {
             .then((res) => {
                 // делает студент
                 // сохранить пришедшие данные
-                if (res) setTechs(res.data.techs)
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                }
                 setLoading(false)
                 //
             })
@@ -72,18 +75,17 @@ const HW15 = () => {
             count: newCount.toString()
         })
 
-        setSearchParams({page: newPage.toString(), count: newCount.toString()})
+        setSearchParams({page: newPage.toString(), count:newCount.toString()})
 
-        //
     }
 
     const onChangeSort = (newSort: string) => {
         // делает студент
 
-        setSort(newSort)
-        setPage(1) // при сортировке сбрасывать на 1 страницу
+       setSort(newSort)
+       setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        sendQuery({sort, page, count})
+        sendQuery({sort: newSort, page, count})
         setSearchParams({page: page.toString(), count:count.toString()})
 
         //
@@ -94,7 +96,7 @@ const HW15 = () => {
         sendQuery({page: params.page, count: params.count})
         setPage(+params.page || 1)
         setCount(+params.count || 4)
-    }, [sort, page, count, searchParams, totalCount])
+    }, [searchParams])
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
